@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loan prediction</title>
+</head>
+<body>
+    <img src="{% static 'images/img.jpg' %}"style="width: 500px;height: 250px;border: 2px solid black;
+    border-radius: 25px;">
+    <form action="" method="post">
+        {% csrf_token %}
+        {{inputform.as_p}}
+
+        <input type="submit" value="predict"/>
+
+    </form>
+   
+
+    {% if predict %}
+        <h2 style="color: green;">your loan is accepted {{predict}}</h2>
+    {% else %}
+        <h2 style="color: blueviolet;">your loan is not accepted{{pr  edict}}</h2>
+    {% endif %}
+
+</body>
+</html>
